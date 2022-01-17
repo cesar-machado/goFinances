@@ -41,4 +41,4 @@ export const TransactionsTypes = styled.View`
   margin-bottom: 16px;
 `;
 
-export const ButtonView = styled(GestureHandlerRootView)``;
+// export const ButtonView = styled(GestureHandlerRootView)``;

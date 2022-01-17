@@ -12,7 +12,6 @@ import TransactionTypeButton from '../../components/TransactionTypeButton';
 import CategorySelect from '../CategorySelect';
 
 import {
-  ButtonView,
   Container,
   Fields,
   Form,
@@ -116,9 +115,7 @@ export function Register() {
             />
           </Fields>
 
-          <ButtonView>
-            <Button title='Enviar' onPress={handleSubmit(handleRegister)} />
-          </ButtonView>
+          <Button title='Enviar' onPress={handleSubmit(handleRegister)} />
         </Form>
 
         <Modal visible={categoryModalOpen}>

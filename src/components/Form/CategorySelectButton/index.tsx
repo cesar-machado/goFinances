@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import { Category, Container, Content, Icon } from './styles';
+import { Category, Container, Icon } from './styles';
 
 interface Props {
   title: string;
@@ -9,11 +9,9 @@ interface Props {
 
 export default function CategorySelectButton({ title, onPress }: Props) {
   return (
-    <Container>
-      <Content onPress={onPress}>
-        <Category>{title}</Category>
-        <Icon name='chevron-down' />
-      </Content>
+    <Container onPress={onPress}>
+      <Category>{title}</Category>
+      <Icon name='chevron-down' />
     </Container>
   );
 }

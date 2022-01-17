@@ -2,6 +2,8 @@ import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import AppLoading from 'expo-app-loading';
 import { ThemeProvider } from 'styled-components';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { NavigationContainer } from '@react-navigation/native';
 
 import {
   useFonts,
@@ -10,18 +12,8 @@ import {
   Poppins_700Bold,
 } from '@expo-google-fonts/poppins';
 
-// import { Dashboard } from './src/screens/Dashboard';
-// import { Register } from './src/screens/Register';
-
 import theme from './src/global/theme';
-import CategorySelect from './src/screens/CategorySelect';
-import { Register } from './src/screens/Register';
-import { NavigationContainer } from '@react-navigation/native';
 import AppRoutes from './src/routes/app.routes';
-import {
-  gestureHandlerRootHOC,
-  GestureHandlerRootView,
-} from 'react-native-gesture-handler';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -35,10 +27,12 @@ export default function App() {
   }
   return (
     <ThemeProvider theme={theme}>
-      <StatusBar style='light' backgroundColor='#5636D3' />
-      <NavigationContainer>
-        <AppRoutes />
-      </NavigationContainer>
+      <GestureHandlerRootView style={{ flex: 1 }}>
+        <StatusBar style='light' backgroundColor='#5636D3' />
+        <NavigationContainer>
+          <AppRoutes />
+        </NavigationContainer>
+      </GestureHandlerRootView>
     </ThemeProvider>
   );
 }

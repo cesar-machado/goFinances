@@ -64,7 +64,7 @@ export const UserName = styled.Text`
   font-family: ${({ theme }) => theme.Fonts.bold};
 `;
 
-export const ButtonView = styled(GestureHandlerRootView)``;
+// export const ButtonView = styled(GestureHandlerRootView)``;
 export const LogoutButton = styled(RectButton)``;
 export const Icon = styled(Feather)`
   color: ${({ theme }) => theme.colors.secondary};

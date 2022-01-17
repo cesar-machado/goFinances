@@ -19,7 +19,6 @@ import {
   Title,
   TransactionList,
   LogoutButton,
-  ButtonView,
 } from './styles';
 
 export interface DataListProps extends TransactionCardProps {

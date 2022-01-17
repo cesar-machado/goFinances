@@ -2,10 +2,7 @@ import styled, { css } from 'styled-components/native';
 import { Feather } from '@expo/vector-icons';
 import { RFValue } from 'react-native-responsive-fontsize';
 import theme from '../../global/theme';
-import {
-  GestureHandlerRootView,
-  RectButton,
-} from 'react-native-gesture-handler';
+import { RectButton } from 'react-native-gesture-handler';
 
 interface IconProps {
   type: 'up' | 'down';
@@ -16,11 +13,9 @@ interface ContainerProps {
   type: 'up' | 'down';
 }
 
-export const Container = styled(GestureHandlerRootView)`
+export const Container = styled.View<ContainerProps>`
   width: 48%;
-`;
 
-export const Content = styled.View<ContainerProps>`
   border-width: ${({ isActive }) => (isActive ? 0 : 1.5)}px;
   border-style: solid;
   border-color: ${({ theme }) => theme.colors.text};
