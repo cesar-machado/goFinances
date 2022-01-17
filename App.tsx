@@ -18,6 +18,10 @@ import CategorySelect from './src/screens/CategorySelect';
 import { Register } from './src/screens/Register';
 import { NavigationContainer } from '@react-navigation/native';
 import AppRoutes from './src/routes/app.routes';
+import {
+  gestureHandlerRootHOC,
+  GestureHandlerRootView,
+} from 'react-native-gesture-handler';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -31,7 +35,7 @@ export default function App() {
   }
   return (
     <ThemeProvider theme={theme}>
-      <StatusBar style='light' />
+      <StatusBar style='light' backgroundColor='#5636D3' />
       <NavigationContainer>
         <AppRoutes />
       </NavigationContainer>
