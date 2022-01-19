@@ -1,5 +1,7 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
+import 'intl';
+import 'intl/locale-data/jsonp/pt-BR';
 import AppLoading from 'expo-app-loading';
 import { ThemeProvider } from 'styled-components';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';

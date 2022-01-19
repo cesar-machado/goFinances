@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigation } from '@react-navigation/native';
 import { Alert, Keyboard, Modal, TouchableWithoutFeedback } from 'react-native';
@@ -101,6 +101,14 @@ export function Register() {
       Alert.alert('Não foi possível salvar');
     }
   }
+
+  useEffect(() => {
+    async function removeAll() {
+      await AsyncStorage.removeItem(dataKey);
+    }
+
+    removeAll();
+  }, []);
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>

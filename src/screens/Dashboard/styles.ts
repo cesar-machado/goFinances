@@ -8,6 +8,9 @@ import {
 } from 'react-native-gesture-handler';
 
 import { DataListProps } from '.';
+interface ImageEmptyProps {
+  source: string;
+}
 
 import theme from '../../global/theme';
 import { FlatList, FlatListProps } from 'react-native';
@@ -101,3 +104,13 @@ export const TransactionList = styled(
 ).attrs({
   showsVerticalScrollIndicator: false,
 })``;
+
+export const ImageContainer = styled.View`
+  align-items: center;
+  justify-content: center;
+`;
+
+export const ImageEmpty = styled.Image<ImageEmptyProps>`
+  width: 300px;
+  height: 236px;
+`;
