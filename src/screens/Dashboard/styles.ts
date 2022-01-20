@@ -114,3 +114,8 @@ export const ImageEmpty = styled.Image<ImageEmptyProps>`
   width: 300px;
   height: 236px;
 `;
+
+export const LoadContainer = styled.View`
+  flex: 1;
+  justify-content: center;
+`;
