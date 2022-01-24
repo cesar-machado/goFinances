@@ -21,22 +21,6 @@ export const Title = styled.Text`
   color: ${({ theme }) => theme.colors.shapes};
 `;
 
-export const Form = styled.View`
-  flex: 1;
-  width: 100%;
-  justify-content: space-between;
-
-  padding: 24px;
-`;
-
-export const Fields = styled.View``;
-
-export const TransactionsTypes = styled.View`
-  flex-direction: row;
-  justify-content: space-between;
-
-  margin-top: 8px;
-  margin-bottom: 16px;
-`;
-
-// export const ButtonView = styled(GestureHandlerRootView)``;
+export const Content = styled.ScrollView.attrs({
+  contentContainerStyle: { flex: 1, padding: 24 },
+})``;

@@ -210,6 +210,7 @@ export function Dashboard() {
               amount={highlightData.total.amount}
               lastTransaction={highlightData.total.lastTransaction}
             />
+          
           </HighlightCards>
 
           <Transactions>
