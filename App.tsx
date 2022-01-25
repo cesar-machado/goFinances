@@ -16,6 +16,7 @@ import {
 
 import theme from './src/global/theme';
 import AppRoutes from './src/routes/app.routes';
+import { SignIn } from './src/screens/SignIn';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -32,7 +33,8 @@ export default function App() {
       <GestureHandlerRootView style={{ flex: 1 }}>
         <StatusBar style='light' backgroundColor='#5636D3' />
         <NavigationContainer>
-          <AppRoutes />
+          {/* <AppRoutes /> */}
+          <SignIn />
         </NavigationContainer>
       </GestureHandlerRootView>
     </ThemeProvider>
