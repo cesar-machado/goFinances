@@ -34,7 +34,8 @@ const schema = Yup.object().shape({
   name: Yup.string().required('Nome é obrigatório'),
   amount: Yup.number()
     .typeError('Informe um valor numérico')
-    .positive('O valor não pode ser nagativo'),
+    .positive('O valor não pode ser nagativo')
+    .required('O valor é obrigatório'),
 });
 export function Register() {
   const [transactionType, setTransactionType] = useState('');
