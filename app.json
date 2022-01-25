@@ -2,6 +2,8 @@
   "expo": {
     "name": "goFinances",
     "slug": "goFinances",
+    "scheme": "gofinances",
+    "owner": "cesarmach.dev",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
