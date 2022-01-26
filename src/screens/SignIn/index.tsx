@@ -1,4 +1,4 @@
-import { Alert, ActivityIndicator } from 'react-native';
+import { Alert, ActivityIndicator, Platform } from 'react-native';
 import React, { useState } from 'react';
 import {
   Container,
@@ -30,7 +30,6 @@ export function SignIn() {
       return await signInWithGoogle();
     } catch (error) {
       Alert.alert('Não foi possível conectar a conta Google');
-    } finally {
       setIsLoading(false);
     }
   }
@@ -41,7 +40,6 @@ export function SignIn() {
       return await signInWithApple();
     } catch (error) {
       Alert.alert('Não foi possível conectar a conta Apple');
-    } finally {
       setIsLoading(false);
     }
   }
@@ -72,11 +70,13 @@ export function SignIn() {
             svg={GoogleSvg}
             onPress={handleSignInWithGoogle}
           />
-          <SignInButton
-            title='Entrar com Apple'
-            svg={AppleSvg}
-            onPress={handleSignInWithApple}
-          />
+          {Platform.OS === 'ios' && (
+            <SignInButton
+              title='Entrar com Apple'
+              svg={AppleSvg}
+              onPress={handleSignInWithApple}
+            />
+          )}
         </FooterWrapper>
 
         {isLoading && (

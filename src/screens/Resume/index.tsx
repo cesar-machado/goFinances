@@ -25,6 +25,7 @@ import { addMonths, format, subMonths } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 import { ActivityIndicator } from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
+import { useAuth } from '../../hooks/auth';
 
 interface CategoryData {
   key: string;
@@ -42,6 +43,8 @@ export default function Resume() {
     []
   );
 
+  const { user } = useAuth();
+
   const theme = useTheme();
 
   function handleDateChange(action: 'next' | 'prev') {
@@ -54,7 +57,7 @@ export default function Resume() {
 
   async function loadData() {
     setIsLoading(true);
-    const dataKey = '@gofinances:transactions';
+    const dataKey = `@gofinances:transactions_user:${user.id}`;
     const response = await AsyncStorage.getItem(dataKey);
     const responseFormatted = response ? JSON.parse(response) : [];
 
