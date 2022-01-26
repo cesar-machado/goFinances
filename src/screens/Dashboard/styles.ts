@@ -119,3 +119,16 @@ export const LoadContainer = styled.View`
   flex: 1;
   justify-content: center;
 `;
+
+export const ListagemWrapper = styled.View`
+  width: 100%;
+  flex-direction: row;
+
+  justify-content: space-around;
+  /* align-items: center; */
+`;
+
+export const ResetTransaction = styled(RectButton)``;
+export const IconReset = styled(Feather)`
+  font-size: ${RFValue(22)}px;
+`;

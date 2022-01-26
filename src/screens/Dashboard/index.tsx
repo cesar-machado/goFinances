@@ -1,8 +1,8 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import HighlightCard from '../../components/HighlightCard';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { useFocusEffect } from '@react-navigation/native';
-import { ActivityIndicator } from 'react-native';
+import { useFocusEffect, useNavigation } from '@react-navigation/native';
+import { ActivityIndicator, RefreshControl } from 'react-native';
 
 import { useTheme } from 'styled-components';
 
@@ -28,6 +28,9 @@ import {
   ImageContainer,
   ImageEmpty,
   LoadContainer,
+  ResetTransaction,
+  ListagemWrapper,
+  IconReset,
 } from './styles';
 import emptyListImage from '../../assets/opps.png';
 import { useAuth } from '../../hooks/auth';
@@ -46,12 +49,19 @@ interface HighlightData {
   total: HighlightProps;
 }
 
+type NavigationProps = {
+  navigate: (screen: string) => void;
+};
+
 export function Dashboard() {
   const [isLoading, setIsLoading] = useState(true);
   const [transactions, setTransactions] = useState<DataListProps[]>([]);
   const [highlightData, setHighlightData] = useState<HighlightData>(
     {} as HighlightData
   );
+  const [atualizando, setAtualizando] = useState(false);
+
+  const navigation = useNavigation<NavigationProps>();
 
   const theme = useTheme();
   const { signOut, user } = useAuth();
@@ -170,6 +180,11 @@ export function Dashboard() {
     setIsLoading(false);
   }
 
+  // async function resetTransaction() {
+  //   const dataKey = `@gofinances:transactions_user:${user.id}`;
+  //   await AsyncStorage.removeItem(dataKey);
+  // }
+
   useEffect(() => {
     loadTransactions();
   }, []);
@@ -230,7 +245,12 @@ export function Dashboard() {
           </HighlightCards>
 
           <Transactions>
+            {/* <ListagemWrapper> */}
             <Title>Listagem</Title>
+            {/* <ResetTransaction onPress={resetTransaction}>
+                <IconReset name='trash-2' />
+              </ResetTransaction>
+            </ListagemWrapper> */}
 
             <TransactionList
               data={transactions}
