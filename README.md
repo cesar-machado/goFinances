@@ -58,7 +58,7 @@ $ git clone https://github.com/cesar-machado/goFinances.git && cd goFinances
 
 <br />
 
-## Siga os passo abaixo para rodar o projeto
+## Siga os passos abaixo para rodar o projeto
 
 ```bash
 # Instalar dependências
