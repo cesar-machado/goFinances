@@ -10,7 +10,7 @@ import { Dashboard } from '../screens/Dashboard';
 import { Register } from '../screens/Register';
 import Resume from '../screens/Resume';
 
-export default function AppRoutes() {
+export function AppRoutes() {
   const theme = useTheme();
   return (
     <Navigator
